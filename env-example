@@ -14,7 +14,7 @@ APP_CODE_PATH_CONTAINER=/var/www
 APP_CODE_CONTAINER_FLAG=:cached
 
 # Choose storage path on your machine. For all storage systems
-DATA_PATH_HOST=~/.laradock/data
+DATA_PATH_HOST=./data
 
 ### Drivers ################################################
 
@@ -89,7 +89,7 @@ WORKSPACE_COMPOSER_AUTH=false
 WORKSPACE_COMPOSER_REPO_PACKAGIST=
 WORKSPACE_NVM_NODEJS_ORG_MIRROR=
 WORKSPACE_INSTALL_NODE=true
-WORKSPACE_NODE_VERSION=node
+WORKSPACE_NODE_VERSION=v10.16.3
 WORKSPACE_NPM_REGISTRY=
 WORKSPACE_INSTALL_YARN=true
 WORKSPACE_YARN_VERSION=latest
@@ -321,11 +321,11 @@ MSSQL_PORT=1433
 
 ### MARIADB ###############################################
 
-MARIADB_VERSION=latest
+MARIADB_VERSION=10.4
 MARIADB_DATABASE=default
 MARIADB_USER=default
 MARIADB_PASSWORD=secret
-MARIADB_PORT=3306
+MARIADB_PORT=127.0.0.1:3306
 MARIADB_ROOT_PASSWORD=root
 MARIADB_ENTRYPOINT_INITDB=./mariadb/docker-entrypoint-initdb.d
 
@@ -869,3 +869,7 @@ GEARMAN_MYSQL_TABLE=gearman_queue
 
 ### ELK Stack ##################################################
 ELK_VERSION=7.5.1
+
+### CERTBOT ################################################
+CERTBOT_DOMAIN=example.com
+CERTBOT_EMAIL=admin@example.com
