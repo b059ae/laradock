@@ -168,7 +168,7 @@ services:
       links:
         - docker-in-docker
       restart: always
-      
+
 ### PHP-FPM ##############################################
     php-fpm:
       build:
@@ -483,6 +483,7 @@ services:
       volumes:
         - ${DATA_PATH_HOST}/mariadb:/var/lib/mysql
         - ${MARIADB_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+        - ${BACKUP_DATA_PATH_HOST}:/backup/mysql
       ports:
         - "${MARIADB_PORT}:3306"
       environment:
