@@ -167,7 +167,8 @@ services:
         - backend
       links:
         - docker-in-docker
-
+      restart: always
+      
 ### PHP-FPM ##############################################
     php-fpm:
       build:
@@ -293,6 +294,8 @@ services:
         - "dockerhost:${DOCKER_HOST_IP}"
       networks:
         - backend
+      restart: always
+
 ### Laravel Horizon ############################################
     laravel-horizon:
       build:
@@ -352,6 +355,7 @@ services:
       networks:
         - frontend
         - backend
+      restart: always
 
 ### Blackfire ########################################
     blackfire:
@@ -489,6 +493,7 @@ services:
         - MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
       networks:
         - backend
+      restart: always
 
 ### PostgreSQL ###########################################
     postgres:
@@ -873,6 +878,7 @@ services:
         - EMAIL="${CERTBOT_EMAIL}"
       networks:
         - frontend
+      restart: always
 
 ### Mailhog ################################################
     mailhog:
